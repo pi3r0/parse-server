@@ -1329,7 +1329,7 @@ const mongoObjectToParseObject = (className, mongoObject, schema) => {
               }
               restObject[newKey] = transformPointerString(schema, newKey, mongoObject[key]);
               break;
-            } else if (key[0] == '_' && key != '__type') {
+            } else if (key[0] == '_' && key != '__type' && key != '__v') {
               throw 'bad key in untransform: ' + key;
             } else {
               var value = mongoObject[key];
